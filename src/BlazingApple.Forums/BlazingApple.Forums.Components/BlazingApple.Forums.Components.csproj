@@ -53,15 +53,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\..\..\..\BlazingApple.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
+		<None Include="..\..\..\..\BlazingApple.png" />
 		<None Include="..\..\..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 		<None Include="compilerconfig.json" />
+		<None Update="BlazingApple.png">
+		  <Pack>True</Pack>
+		  <PackagePath></PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>

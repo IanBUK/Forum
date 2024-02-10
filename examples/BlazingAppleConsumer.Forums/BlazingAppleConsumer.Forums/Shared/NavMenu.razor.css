@@ -4,7 +4,7 @@
 
 .top-row {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #FFFFFF;
 }
 
 .navbar-brand {
@@ -42,13 +42,19 @@
 
 .nav-item ::deep a.active {
     background-color: rgba(255,255,255,0.25);
-    color: white;
+    color: rgb(109, 90, 35);
 }
 
 .nav-item ::deep a:hover {
     background-color: rgba(255,255,255,0.1);
-    color: white;
+    color: yellow;
 }
+
+.nav-link active
+{
+    background-color: black;
+}
+
 
 @media (min-width: 641px) {
     .navbar-toggler {

@@ -2,19 +2,30 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background-color: #f5f5f4;
 }
 
 main {
     flex: 1;
 }
 
+
+.ftaTitle {
+    font-size: 20px !important;
+    font-weight: 600;
+    color: rgb(154, 124, 34);
+}
+
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    //background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: white;
+    border-color: #e4e2e8;
+    border-right-width: 1px;
 }
 
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
+    //background-color: #f7f7f7;
+    // border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
@@ -51,7 +62,7 @@ main {
     }
 
     .sidebar {
-        width: 250px;
+        width: 225px;
         height: 100vh;
         position: sticky;
         top: 0;

@@ -11,6 +11,6 @@ public partial class Index : ComponentBase
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
-		NavManager.NavigateTo("/forums");
+		//NavManager.NavigateTo("/forums");
 	}
 }

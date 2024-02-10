@@ -1,23 +1,29 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-html, body
-{
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+html, body {
+	font-family: Open Sans,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+	color: #9a7c22;
 }
 
-h1:focus
-{
+h1:focus {
 	outline: none;
+	color: #9a7c22;
 }
 
-a, .btn-link, .btn.btn-primary, .btn.btn-outline-primary, .btn.btn-outline-primary:hover, .btn.btn-primary:hover
-{
+a, .btn-link, .btn.btn-primary, .btn.btn-outline-primary, .btn.btn-outline-primary:hover, .btn.btn-primary:hover {
 	text-decoration: none !important;
+	color: #4A4A4A;
 }
+
 
 a:hover,a:active,.btn-link:hover, .btn-link:active
 {
 	text-decoration: underline !important;
+}
+
+.pHeader
+{
+	font-weight: bold;
 }
 
 .content

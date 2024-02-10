@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingApple.Forum.Components", "BlazingApple.Forum.Components\BlazingApple.Forum.Components.csproj", "{D113D410-3B51-4933-A78A-8CA0D0805DC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingApple.Forums.Components", "BlazingApple.Forums.Components\BlazingApple.Forums.Components.csproj", "{436D3C62-5BB3-49F0-A16A-498604B79058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,11 +28,18 @@ Global
 		{D113D410-3B51-4933-A78A-8CA0D0805DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D113D410-3B51-4933-A78A-8CA0D0805DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D113D410-3B51-4933-A78A-8CA0D0805DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436D3C62-5BB3-49F0-A16A-498604B79058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436D3C62-5BB3-49F0-A16A-498604B79058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436D3C62-5BB3-49F0-A16A-498604B79058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436D3C62-5BB3-49F0-A16A-498604B79058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11E1B772-498B-4B81-8E61-78DF4EE81D78}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{436D3C62-5BB3-49F0-A16A-498604B79058} = {ACE6802B-DA24-4459-98F9-89570C5B797E}
 	EndGlobalSection
 EndGlobal
