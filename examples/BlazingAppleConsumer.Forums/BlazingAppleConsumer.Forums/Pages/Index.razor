@@ -1,38 +1,39 @@
 ﻿@page "/"
 
-<PageTitle>Free to All</PageTitle>
 
-<p class="ftaTitle" style="align-items:center;">
-    Free to All
-</p>
+    <PageTitle>Free to All</PageTitle>
+
+    <span class="ftaTitle" style="align-items:center;">
+        Free to All
+    </span>
+
+    <div id="Offer" class="homepagePanelRow">
+        <p class="homepagePanelRowTitle">Offer</p>
+        I have a <input type="text" id="offerText" class="itemTitle" /> that I am willing to <select name="offerType" id="offerType"><option value="give">give</option><option value="loan">loan</option></select>
+        <p>Note</p>
+        <textarea id="offerNote" class="itemNote" />
+        <input type="button" id="offerButton" value="Send" class="goButton" />
+    </div>
+
+    <div id="Want" class="homepagePanelRow">
+        <p class="homepagePanelRowTitle">Want</p>
+        I would like a <input type="text" id="wantText" class="itemTitle" /> please
+        <p>Note</p>
+        <textarea id="wantNote" class="itemNote" /> <input type="button" id="wantButton" value="Send" class="goButton" />
+    </div>
+    <div id="myOffers" class="homepagePanelBlock">
+        <p class="homepagePanelRowTitle">My Offers</p>
+    </div>
+
+    <div id="myWants" class="homepagePanelBlockRight">
+        <p class="homepagePanelRowTitle">My Wants</p>
+    </div>
 
 
 
-<p  class="pHeader">Forums</p>
-<p>A "Forum" is a top-level concept that the user should largely be abstracted from.</p>
-<p>For example, "Reddit" would be a forum in it of itself.</p>
-<p>
-    You may have more than one forum only if there is to be no overlap of posting/user's knowledge of another forum.
-    Essentially, it's intended for multi-tenant use cases.
-</p>
-
-
-<p  class="pHeader">Threads</p>
-<p>
-    A "Thread" is a much like a "subreddit" over in Reddit-land.
-    It describes a purpose of posts, and groups posts under a central purpose.
-</p>
-
-<p>For example, <a href="https://www.reddit.com/r/diabetes_t1/">r/diabetes_t1</a> would be a Thread in our world.</p>
-
-<p  class="pHeader">Posts</p>
-<p>
-    A "Post" is content a user generates and other users can comment on.
-</p>
-<br/>
-<br/>
-
-<p class="pHeader">Disclaimer</p>
-<p>
-   Some legal disclaimer, protecting CCB.
-</p>
+    <div class="bottomPanel">
+        <p class="pHeader">Disclaimer</p>
+        <p>
+            Some legal disclaimer, protecting CCB.
+        </p>
+    </div>

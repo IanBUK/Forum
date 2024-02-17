@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href=""><img src="CCBLogo.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;" /></a>
+        <a class="navbar-brand" href="https://www.ccbedford.org/"><img src="CCBLogo.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;" /></a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,6 +10,9 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="https://ccbedford.churchsuite.com/my" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> ChurchSuite
+            </NavLink>
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>

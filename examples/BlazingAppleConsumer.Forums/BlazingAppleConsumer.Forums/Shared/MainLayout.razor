@@ -2,24 +2,24 @@
 @using Blazored.Toast.Configuration;
 @inherits LayoutComponentBase
 
-<PageTitle>BlazingAppleConsumer.Forums</PageTitle>
+    <PageTitle>BlazingAppleConsumer.Forums</PageTitle>
 
-<div class="page">
-	<div class="sidebar">
-		<NavMenu />
-	</div>
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
+        </div>
 
-	<main>
-		<article class="content px-4">
-			@Body
-		</article>
-	</main>
+        <main>
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
 
-	<BlazoredToasts Position="ToastPosition.BottomRight"
-					Timeout="10"
-					IconType="IconType.FontAwesome"
-					SuccessClass="success-toast-override"
-					SuccessIcon="fa fa-thumbs-up"
-					ErrorIcon="fa fa-bug" />
+        <BlazoredToasts Position="ToastPosition.BottomRight"
+                        Timeout="10"
+                        IconType="IconType.FontAwesome"
+                        SuccessClass="success-toast-override"
+                        SuccessIcon="fa fa-thumbs-up"
+                        ErrorIcon="fa fa-bug" />
 
-</div>
+    </div>
