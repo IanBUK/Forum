@@ -25,9 +25,6 @@ jobs:
           path: .
           output-file: cyclonedx-sbom.xml
 
-      - name: Build
-        run: dotnet build --no-restore
-
       - name: Upload SBOM as Artifact
         if: always()
         uses: actions/upload-artifact@v4
