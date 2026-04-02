@@ -1,36 +1,36 @@
-# This is the modified build workflow
-
 name: Build
 
 on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '5.0.x'
+        uses: actions/setup-dotnet@v4
 
       - name: Restore Dependencies
         run: dotnet restore
 
       - name: Generate CycloneDX SBOM
-        # Using cdxgen to capture both NuGet and any client-side JS dependencies
         run: |
-          npm install -g @cyclonedx/cdxgen
-          cdxgen -t dotnet -o cyclonedx-sbom.json
+          dotnet tool install --global CycloneDX
+          cyclonedx-dotnet -o cyclonedx-sbom.xml
+
+      - name: Build
+        run: dotnet build --no-restore
 
       - name: Upload SBOM as Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: project-sbom
-          path: cyclonedx-sbom.json
+          path: cyclonedx-sbom.xml
           retention-days: 90
