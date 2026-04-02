@@ -20,10 +20,12 @@ jobs:
         run: dotnet restore
 
       - name: Generate CycloneDX SBOM
-        uses: CycloneDX/gh-dotnet@master
-        with:
-          path: .
-          output-file: cyclonedx-sbom.xml
+        run: |
+          dotnet tool install --global CycloneDX.CLI
+          cyclonedx-dotnet -o cyclonedx-sbom.xml
+
+      - name: Build
+        run: dotnet build --no-restore
 
       - name: Upload SBOM as Artifact
         if: always()
