@@ -17,15 +17,16 @@ jobs:
         uses: actions/setup-dotnet@v4
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore src/BlazingApple.Forums/BlazingApple.Forums.sln
 
       - name: Generate CycloneDX SBOM
         run: |
           dotnet tool install --global CycloneDX.CLI
           cyclonedx-dotnet src/BlazingApple.Forums/BlazingApple.Forums.sln -o cyclonedx-sbom.xml
+        continue-on-error: true
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build src/BlazingApple.Forums/BlazingApple.Forums.sln --no-restore
 
       - name: Upload SBOM as Artifact
         if: always()
