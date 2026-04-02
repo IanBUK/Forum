@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate CycloneDX SBOM
+        run: |
+          dotnet tool install --global CycloneDX
+          cycloneDX generate
+
+      - name: Build project
+        run: |
+          dotnet build YourProject.sln
+
+      - name: Upload SBOM artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: sbom
+          path: ./path/to/generated/sbom-
