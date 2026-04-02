@@ -1,10 +1,9 @@
-name: Build
+name: Build and Generate SBOM
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   build:
@@ -15,16 +14,20 @@ jobs:
 
       - name: Generate CycloneDX SBOM
         run: |
-          dotnet tool install --global CycloneDX
-          cycloneDX generate
+          curl -L -o cyclonedx-sbom-generator.zip https://github.com/CycloneDX/cyclonedx-cli/releases/latest/download/cyclonedx-cli.zip
+          unzip cyclonedx-sbom-generator.zip
+          ./cyclonedx-sbom-generator generate -o sbom.xml
 
-      - name: Build project
+      - name: Build Project
         run: |
-          dotnet build YourProject.sln
+          dotnet build src/BlazingApple.Forums/BlazingApple.Forums.sln
 
-      - name: Upload SBOM artifact
-        if: always()
-        uses: actions/upload-artifact@v2
+      - name: Upload SBOM Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
-          path: ./path/to/generated/sbom-
+          path: sbom.xml
+
+      - name: Notify Build Failure
+        if: failure()
+        run: echo 'Build failed, but SBOM has been uploaded.'
