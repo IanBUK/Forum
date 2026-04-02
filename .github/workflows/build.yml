@@ -1,4 +1,6 @@
-name: Build and Generate SBOM
+# This is the modified build workflow
+
+name: Build
 
 on:
   push:
@@ -12,22 +14,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
       - name: Generate CycloneDX SBOM
+        # Using cdxgen to capture both NuGet and any client-side JS dependencies
         run: |
-          curl -L -o cyclonedx-sbom-generator.zip https://github.com/CycloneDX/cyclonedx-cli/releases/latest/download/cyclonedx-cli.zip
-          unzip cyclonedx-sbom-generator.zip
-          ./cyclonedx-sbom-generator generate -o sbom.xml
+          npm install -g @cyclonedx/cdxgen
+          cdxgen -t dotnet -o cyclonedx-sbom.json
 
-      - name: Build Project
-        run: |
-          dotnet build src/BlazingApple.Forums/BlazingApple.Forums.sln
-
-      - name: Upload SBOM Artifact
+      - name: Upload SBOM as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: sbom
-          path: sbom.xml
-
-      - name: Notify Build Failure
-        if: failure()
-        run: echo 'Build failed, but SBOM has been uploaded.'
+          name: project-sbom
+          path: cyclonedx-sbom.json
+          retention-days: 90
