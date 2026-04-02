@@ -22,7 +22,7 @@ jobs:
       - name: Generate CycloneDX SBOM
         run: |
           dotnet tool install --global CycloneDX.CLI
-          cyclonedx-dotnet -o cyclonedx-sbom.xml
+          cyclonedx-dotnet src/BlazingApple.Forums/BlazingApple.Forums.sln -o cyclonedx-sbom.xml
 
       - name: Build
         run: dotnet build --no-restore
